@@ -21,14 +21,15 @@ exports.oknested = function (values, res) {
         group.matakuliah = [group.matakuliah, item.matakuliah].filter(Boolean);
       }
     } else {
-      // Buat group baru jika belum ada
-      akumulasikan[item.nama] = {
-        nim: item.nim,
-        nama: item.nama,
-        jurusan: item.jurusan,
-        // Buat array matakuliah dan tambahkan matakuliah pertama
-        matakuliah: [item.matakuliah],
-      };
+      akumulasikan[item.nama] = item;
+      // // Buat group baru jika belum ada
+      // akumulasikan[item.nama] = {
+      //   nim: item.nim,
+      //   nama: item.nama,
+      //   jurusan: item.jurusan,
+      //   // Buat array matakuliah dan tambahkan matakuliah pertama
+      //   matakuliah: [item.matakuliah],
+      // };
     }
     return akumulasikan;
   }, {});
